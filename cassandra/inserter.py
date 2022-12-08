@@ -12,6 +12,7 @@ from cassandra.auth import PlainTextAuthProvider
 import names
 from random_username.generate import generate_username
 
+
 def pass_generator(pwd_length=8):
     digits = '0123456789'
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -29,6 +30,7 @@ def pass_generator(pwd_length=8):
 
     return ''.join(choices(chars, k=pwd_length))
 
+
 def name():
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -41,7 +43,6 @@ def name():
         chars += seq
 
     return ''.join(choices(chars, k=pwd_length))
-
 
 
 def read_yaml(path):
