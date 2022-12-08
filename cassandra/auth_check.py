@@ -33,8 +33,8 @@ if __name__ == '__main__':
     session = cluster.connect()
     log = input("Enter your login: ")
     pwd = input("Enter your password: ")
-
-    check = session.execute(f"select count(*)  from auth.table2 where login= {log} and pwd= {pwd})")
+    print(log,pwd)
+    check = session.execute(f"select count (*)  from auth.table2 where login={log} and pwd={pwd};")
     print(check)
 
     if check:
