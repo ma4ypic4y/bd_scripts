@@ -35,7 +35,7 @@ if __name__ == '__main__':
     pwd = input("Enter your password: ")
     print(log,pwd)
     check = session.execute(f"select count (*)  from auth.table2 where login='{log}' and pwd='{pwd}';")
-    print(check.current_rows)
+    print(check.current_rows[0].count)
 
-    if check:
+    if check.current_rows[0].count==1:
         print('You are logged in cassandra cluster!')
